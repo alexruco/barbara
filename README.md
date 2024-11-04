@@ -13,7 +13,7 @@ Welcome to **Barbara**! This project is designed to transform the way we send ma
 You can install the package via pip:
 <!--
 ```bash
-pip install https://github.com/alexruco/barbara/@main#egg=barbara
+pip install git+https://github.com/alexruco/barbara/@main#egg=barbara
 ```
 -->
 Usage 📚
