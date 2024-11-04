@@ -1,6 +1,6 @@
 # Barbara 🚀
 
-Welcome to **Bárbara**! This project is designed to [brief description of what your module does].
+Welcome to **Barbara**! This project is designed to transform the way we send mass emails for marketing and other purposes.
 
 ## Features ✨
 
@@ -11,9 +11,11 @@ Welcome to **Bárbara**! This project is designed to [brief description of what 
 ## Installation 💻
 
 You can install the package via pip:
-
+<!--
 ```bash
-pip install https://github.com/alexruco/barbara/@egg=barbara
+pip install https://github.com/alexruco/barbara/@main#egg=barbara
+```
+-->
 Usage 📚
 
 Here's a quick example to get you started:
@@ -26,9 +28,7 @@ result = module.some_function(5, 10)
 print(result)
 ```
 -->
-Documentation 📖
-
-Documentation is available at [link to documentation].
+ 
 Running Tests 🧪
 
 To run the tests, you can use the unittest module or pytest.
