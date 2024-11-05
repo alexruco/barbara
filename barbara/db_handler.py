@@ -1,5 +1,7 @@
 # barbara/db_handler.py
 
+# barbara/db_handler.py
+
 import sqlite3
 
 def create_database():
@@ -25,22 +27,24 @@ def create_database():
     if 'treated' not in columns:
         cursor.execute('ALTER TABLE tb_leads ADD COLUMN treated INTEGER DEFAULT 0')
 
-    # Create tb_emails table
+    # Create tb_emails table with only lead_id and recipient as non-null fields
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS tb_emails (
             id_email INTEGER PRIMARY KEY AUTOINCREMENT,
+            lead_id INTEGER NOT NULL,
             recipient TEXT NOT NULL,
-            email_body TEXT NOT NULL,
-            email_subject TEXT NOT NULL,
-            email_sender TEXT NOT NULL,
-            email_sent_timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+            email_body TEXT NULL,
+            email_subject TEXT NULL,
+            email_sender TEXT NULL,
+            email_sent_timestamp TIMESTAMP NULL,
+            FOREIGN KEY (lead_id) REFERENCES tb_leads (id_lead) ON DELETE CASCADE
         )
     ''')
 
     # Commit changes and close the connection
     conn.commit()
     conn.close()
-    
+        
 def homepage_exists(homepage_lead):
     conn = sqlite3.connect('db_leads.db')
     cursor = conn.cursor()
